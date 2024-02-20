@@ -26,33 +26,35 @@ function App() {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center">
-      <h1 className="text-lg my-5">Palindrome Checker</h1>
-      <p className="w-[600px] mb-5">
-        A palindrome is a word, phrase, number, or sequence of symbols that
-        reads the same forwards as backwords. Find out if a phrase is a
-        palindrome by typing it in the input field and clicking the check
-        button, or hitting Enter on your keyboard.
-      </p>
-      <input
-        className="border border-gray-300 p-2 rounded-md w-80 mt-5"
-        type="text"
-        placeholder="Enter text"
-        onChange={handleChange}
-        onKeyDown={handleKeyPress}
-      />
-      <button
-        className="bg-slate-300 p-3 my-5 rounded-md"
-        onClick={checkPalindrome}
-      >
-        Check
-      </button>
-      <div className={!input ? "hidden" : "block"}>
-        <p id="message" className="hidden">
-          {isPalindrome
-            ? `${input} is a palindrome`
-            : `${input} is not a palindrome`}
+    <div className="bg-[#434059] min-h-screen text-white">
+      <div className="flex flex-col justify-center items-center">
+        <h1 className="text-lg my-5 uppercase">Palindrome Checker</h1>
+        <p className="w-[600px] mb-8 mt-2">
+          A palindrome is a word, phrase, number, or sequence of symbols that
+          reads the same backwords as forwards. Find out if a phrase is a
+          palindrome by typing it in the input field and clicking the check
+          button, or hitting Enter on your keyboard.
         </p>
+        <input
+          className="border border-gray-300 p-2 rounded-md w-80 mt-5 text-black"
+          type="text"
+          placeholder="Enter text"
+          onChange={handleChange}
+          onKeyDown={handleKeyPress}
+        />
+        <button
+          className="bg-slate-300 p-3 my-5 rounded-md text-black w-28"
+          onClick={checkPalindrome}
+        >
+          Check
+        </button>
+        <div className={!input ? "hidden" : "block"}>
+          <p id="message" className="hidden">
+            {isPalindrome
+              ? `${input} is a palindrome`
+              : `${input} is not a palindrome`}
+          </p>
+        </div>
       </div>
     </div>
   );
